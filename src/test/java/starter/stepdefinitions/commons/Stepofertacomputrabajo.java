@@ -15,8 +15,8 @@ public class Stepofertacomputrabajo {
 
     }
 
-    @When("el usuario realiza los filtros de busqueda definidos")
-    public void el_usuario_realiza_los_filtros_de_busqueda_definidos() {
+    @When("el usuario realiza los filtros de busqueda definidos {string}, {string}")
+    public void el_usuario_realiza_los_filtros_de_busqueda_definidos(String string, String string2) {
 
     }
 
