@@ -1,13 +1,23 @@
 package starter.stepdefinitions.independent;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ofertacomputrabajoStefDef {
 
-    @When("el usuario realiza su registro diligencia los campos creacion de nueva cuenta {string}, \"brayam, \"duran\", \"pruebas12*\", \"QA analyst\", \"Guainía\"")
-    public void el_usuario_realiza_su_registro_diligencia_los_campos_creacion_de_nueva_cuenta_brayam_duran_pruebas12_qa_analyst_guainía(String string) {
-
+    @And("el usuario realiza su registro diligencia los campos creacion de nueva cuenta {string}, {string}, {string}, {string}, {string}, {string}")
+    public void elUsuarioRealizaElRegistroDeNuevaCuenta(
+            String correo,
+            String nombre,
+            String apellido,
+            String contrasena,
+            String puestoDetrabajo,
+            String departamento
+    ) {
+        theActorInTheSpotlight().attemptsTo(
+        );
 
     }
 
@@ -17,7 +27,7 @@ public class ofertacomputrabajoStefDef {
 
     }
 
-    @When("el usuario diligencia su correo de manera incorrecta {string}")
+    @And("el usuario diligencia su correo de manera incorrecta {string}")
     public void el_usuario_diligencia_su_correo_de_manera_incorrecta(String string) {
 
 

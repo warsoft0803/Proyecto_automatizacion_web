@@ -1,0 +1,4 @@
+$(document).ready(function() {
+CucumberHTML.timelineItems.pushArray([{"id":"6cefefa7-cd81-4f39-a178-a5249e6f1ec2","feature":"Registration","scenario":"o: Succesful registration","start":1765335611293,"group":29,"content":"","tags":"","end":1765335629437,"className":"passed"},{"id":"0687283c-6846-457a-81d7-6cd789f8e8c3","feature":"Registration","scenario":"Validacion de campos requeridos","start":1765335611293,"group":30,"content":"","tags":"","end":1765335625950,"className":"passed"},{"id":"238d7f98-f902-404c-a964-12ffe8ab84a6","feature":"Registration","scenario":"o: Succesful registration","start":1765335611293,"group":31,"content":"","tags":"","end":1765335628901,"className":"passed"}]);
+CucumberHTML.timelineGroups.pushArray([{"id":29,"content":"Thread[#29,ForkJoinPool-2-worker-2,5,main]"},{"id":30,"content":"Thread[#30,ForkJoinPool-2-worker-3,5,main]"},{"id":31,"content":"Thread[#31,ForkJoinPool-2-worker-4,5,main]"}]);
+});
