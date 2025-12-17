@@ -1,4 +1,4 @@
-package starter.ui.ofertacomputrabajo;
+package testing.ui.ofertacomputrabajo;
 
 import net.serenitybdd.screenplay.targets.Target;
 
@@ -19,8 +19,13 @@ public class Ofertacomputrabajo {
     public static Target BOTON_BUSCAR = Target.the("Boton buscar en base a los filtros aplicados")
             .locatedBy("//*[@id='search-button']");
 
+    //vista oferta donde se ubica los filtros
 
-    public static final Target BOTON_EXPERIENCIA = Target.the("Botón filtro Experiencia")
+    public static Target POP_UPBOTON = Target.the("Muestra popup de boton de notificacion ofertas")
+            .locatedBy("//button[@onclick='webpush_subscribe_ko(event);']");
+
+    //experiencia
+    public static final Target DROPDOWN_EXPERIENCIA = Target.the("Despliega años de experiencia")
             .locatedBy(
                     "//div[contains(@class,'field_select_links') and contains(@class,'small')]//p[normalize-space(.)='Experiencia']");
 
@@ -30,18 +35,42 @@ public class Ofertacomputrabajo {
                         "//div[contains(@class,'field_select_links') and contains(@class,'open')]//li//span[contains(@class,'buildLink') and normalize-space(.)='" + texto + "']");
     }
 
-    public static final Target BOTON_TRES_PUNTOS = Target.the("Selecciona los tres puntos de la oferta")
-            .locatedBy("(//div[contains(@class,'opt_dots')])[1]");
+    //salario
+    public static final Target DROPDOWN_SALARIO = Target.the("Despliega rangos de salario")
+            .locatedBy(
+                    "//div[contains(@class,'field_select_links') and contains(@class,'small')]//p[normalize-space(.)='Salario']");
 
-    public static final Target CLIC_APLICAROFERTA = Target.the("click en aplicar")
-            .locatedBy("//*[@id='7A797577CC74F11161373E686DCF3405']/div[2]/div/span[1]");
+
+    public static Target OPCION_SALARIO(String texto) {
+        return Target.the("Opción de salario: " + texto)
+                .locatedBy(
+                        "//div[contains(@class,'field_select_links') and contains(@class,'open')]//li//span[contains(@class,'buildLink') and normalize-space(.)='" + texto + "']");
+    }
+
+
+    // Identifica localizador de la oferta y ciudad
+    public static final Target TITULO_OFERTA_POR_ID = Target.the("Título de la oferta por ID de tarjeta")
+            .locatedBy("//*[@id='7A797577CC74F11161373E686DCF3405']/h2/a");
+
+    public static final Target CIUDAD_OFERTA_POR_ID = Target.the("Ciudad/ubicación de la oferta por ID de tarjeta")
+            .locatedBy("//*[@id='7A797577CC74F11161373E686DCF3405']/p[2]");
+
+    //interaccion con la oferta
+    public static final Target BOTON_TRES_PUNTOS = Target.the("Selecciona los tres puntos de la oferta")
+            .locatedBy("(//div[@class='opt_dots'])[2]");
+
+    public static final Target CLICK_APLICAROFERTA = Target.the("click en aplicar")
+            .locatedBy("//span[contains(text(),'Aplicar')]");
 
     //Vista insertar mail
     public static final Target CAMPO_MAIL = Target.the("click en mail")
-            .locatedBy("//button[@class='b_primary_inv mt15']");
+            .locatedBy("//*[@id='Email']");
+
+       public static final Target MAIL_FALLIDO = Target.the("Muestra mensaje de error si inserta mail sin estructura")
+            .locatedBy("//span[@id='Email-error']");
 
     public static final Target CONTINUAR_MAIL = Target.the("click en continuar vista mail")
-            .locatedBy("//input[@class='it-email']");
+            .locatedBy("//button[@id='continueWithMailButton']");
 
 
     //Formulario de registro
@@ -65,9 +94,6 @@ public class Ofertacomputrabajo {
         return Target.the("Seleccionar departamento " + departamento)
                 .locatedBy("//li[contains(@class,'option') and normalize-space(.)='" + departamento + "']");
     }
-
-    public static final Target RECAPTCHA = Target.the("click en campo recaptcha")
-            .locatedBy("//span[@id='recaptcha-anchor']");
 
     public static final Target BOTON_CONTINUARFINAL = Target.the("click en boton continuar")
             .locatedBy("//button[@id='continueButton']");

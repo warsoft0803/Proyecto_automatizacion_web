@@ -1,4 +1,4 @@
-package starter.stepdefinitions.hooks;
+package testing.stepdefinitions.hooks;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
+
 
     @Before(order = 0)
     public void setUpStage() {
@@ -24,4 +25,3 @@ public class Hooks {
         Serenity.setSessionVariable("ScenarioName").to(scenario.getName());
     }
 }
-

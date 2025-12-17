@@ -1,4 +1,4 @@
-package starter.ui.ofertacomputrabajo;
+package testing.ui.ofertacomputrabajo;
 
 import net.serenitybdd.screenplay.targets.Target;
 
